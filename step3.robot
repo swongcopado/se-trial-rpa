@@ -304,7 +304,7 @@ Set User Stories Default Record Type and Layout
     sleep                   5s
     ${welcome_message} =    IsText                      Welcome to the Enhanced Profile User Interface
     Run Keyword If          ${welcome_message}          ClickText                   No Thanks
-    TypeText                page:console:pc_form:find:findComponent:input           User Stories
+    TypeText                page:console:pc_form:find:findComponent:input           User Stor
     sleep                   5s
     ClickText               User Stories                anchor=User Story Commits        partial_match=false
     ClickText               Edit                        partial_match=false
