@@ -83,6 +83,7 @@ Create Trial Users
         TypeText               Username                    ${se_id}+u${currentUserNo}+${trial_no}@copado.com      clear_key={CONTROL + a}
         Dropdown               User License                Salesforce
         Dropdown               Profile                     System Administrator
+        Dropdown               Language                    English
         ClickCheckbox          Flow User                   on
         #                      ClickCheckbox               Generate new password and notify user immediately      off
         ClickItem              Save
