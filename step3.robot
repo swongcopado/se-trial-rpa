@@ -246,6 +246,7 @@ Set SCA Result Default Record Type and Layout
     Appstate                Home
     GoTo                    ${login_url}/lightning/setup/EnhancedProfiles/home
     ClickText               System Administrator
+    sleep                   5s
     ${welcome_message} =    IsText                      Welcome to the Enhanced Profile User Interface
     Run Keyword If          ${welcome_message}          ClickText                   No Thanks
     TypeText                page:console:pc_form:find:findComponent:input           Static Code Analysis Results
