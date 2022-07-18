@@ -14,6 +14,7 @@ Sign In Trial Users and Change Password on Sandboxes
     [Tags]                     Step1
     Appstate                   Home
     Logout
+#    ${sandboxNames}=           Create List                dev1                        dev2                 dev3                dev4    sit    uat    hotfix
     ${sandboxNames}=           Create List                dev1                        dev2                 dev3                dev4    sit    uat    hotfix
 
     FOR                        ${uNum}                    IN RANGE                    1                    ${no_of_users}+1
