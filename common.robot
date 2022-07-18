@@ -63,6 +63,23 @@ Login As
         ClickText             Got it
     END
 
+
+Login To Sandbox As
+    [Documentation]             Login to Salesforce instance
+    [Arguments]                 ${sandboxName}    ${pUsername}    ${pPassword}
+    GoTo                        ${sf_domain}--${sandboxName}.my.salesforce.com
+    TypeText                    Username                    ${pUsername}
+    TypeSecret                  Password                    ${pPassword}
+    ClickText                   Log In
+    ${phoneRegPrompt}        IsText                      Register Your Mobile Phone
+    IF                          ${phoneRegPrompt}
+        ClickText               I Don't Want to Register My Phone
+    END
+    ${scheduledMaintenance}     IsText                      Scheduled Maintenance
+    IF                        ${scheduledMaintenance}
+        ClickText             Got it
+    END
+
 Logout
     ${isLoggedIn}    IsNoText    Remember me
     IF                ${isLoggedIn}
