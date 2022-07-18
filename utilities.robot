@@ -15,10 +15,10 @@ Sign In Trial Users and Change Password on Sandboxes
     Appstate                   Home
     Logout
 #    ${sandboxNames}=           Create List                dev1                        dev2                 dev3                dev4    sit    uat    hotfix
-    ${sandboxNames}=           Create List                dev1                        dev2                 dev3                dev4    sit    uat    hotfix
+    @{sandboxNames}=           Create List                dev1                        dev2                 dev3                dev4    sit    uat    hotfix
 
     FOR                        ${uNum}                    IN RANGE                    1                    ${no_of_users}+1
-        FOR                    ${currSandbox}             IN                          ${sandboxNames}
+        FOR                    ${currSandbox}             IN                          @{sandboxNames}
             Login To Sandbox As                           ${currSandbox}              ${se_id}+u${uNum}+${trial_no}@copado.com.${currSandbox}        ${dummy_password}
             ${changePasswordPrompt}                       isText                      Change Your Password
             IF                 ${changePasswordPrompt}
