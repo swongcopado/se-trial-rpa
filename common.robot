@@ -65,7 +65,7 @@ Login As
 
 
 Login To Sandbox As
-    [Documentation]             Login to Salesforce instance
+    [Documentation]             Login specifically to a provided sandbox name using username and password provided.
     [Arguments]                 ${sandboxName}    ${pUsername}    ${pPassword}
     GoTo                        https://${sf_domain}--${sandboxName}.sandbox.my.salesforce.com
     TypeText                    Username                    ${pUsername}

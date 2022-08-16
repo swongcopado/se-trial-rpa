@@ -10,11 +10,10 @@ Suite Teardown                 End suite
 
 
 Sign In Trial Users and Change Password on Sandboxes
-    [Documentation]            After setting the passwords, sign in the users
+    [Documentation]            Sign into sandboxes to change the default passwords for all the trial users. Use this utility if the step failed during Step1 but the sandboxes were created.
     [Tags]                     Step1
     Appstate                   Home
     Logout
-#    ${sandboxNames}=           Create List                dev1                        dev2                 dev3                dev4    sit    uat    hotfix
     @{sandboxNames}=           Create List                dev1                        dev2                 dev3                dev4    sit    uat    hotfix
 
     FOR                        ${uNum}                    IN RANGE                    1                    ${no_of_users}+1
