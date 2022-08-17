@@ -399,6 +399,7 @@ Create Pipeline Connections
         ${destEnv}=                       Get From List               ${allDestinationEnvs}              ${idx}
         ${branch}=                        Get From List               ${allBranches}                     ${idx}
         GoTo               ${login_url}/lightning/o/copado__Deployment_Flow__c/list
+        VerifyText         Pipeline Name                       # added this line to make sure we are in the list view before clicking.
         ClickText          ${pipelineName}
         VerifyText         ${pipelineName}
         ClickText          Pipeline Connections
