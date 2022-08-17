@@ -203,7 +203,10 @@ Create Production Git Snapshot
         ${snapshotCompleted} =             IsNoText                       Warning. There are operations           5s           # look for "Hide Message" within 5 seconds
         Exit For Loop If            ${snapshotCompleted}                                              # Exit the loop when Hide Message is no longer found
     END  
-    VerifyText          Complete        
+    GoTo                ${login_url}/lightning/o/copado__Git_Repository__c/list
+    ClickText           ${git_repo}
+    VerifyText          Git Snapshots                        # Check that the Git Snapshots section of the screen is loaded
+    VerifyText          PROD_MAIN                            # Check that the Snapshot has been created with the PROD_MAIN credential listed. If not created, the credential will not be on the screen.
     Logout                                          
 
 Create Other Git Snapshots
