@@ -104,12 +104,6 @@ Set Default Trial User Passwords
     VerifyText                 Success                     anchor=Status
     CloseWindow
     Logout
-
-Sign In Trial Users and Change Password
-    [Documentation]            After setting the passwords, sign in the users
-    [Tags]                     Step1
-    Appstate                   Home
-    Logout
     FOR                        ${uNum}                     IN RANGE                    1                          ${no_of_users}+1
         Login As               ${se_id}+u${uNum}+${trial_no}@copado.com                ${dummy_password}
         ${changePasswordPrompt}                            isText                      Change Your Password
