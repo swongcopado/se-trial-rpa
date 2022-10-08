@@ -337,6 +337,7 @@ Create SCA Settings Record
     UseModal                off
     ClickText               Rules
     VerifyText              SCAR-0000
+    Logout
 
 
 Create Pipeline

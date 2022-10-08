@@ -90,7 +90,7 @@ Create Trial Users
     END
     Logout
 
-Set Default Trial User Passwords                       
+Set Default Trial User Passwords and create Sandboxes if successful                      
     [Documentation]            Make sure the Apex class to set default user password has been created in the Salesforce org
     [Tags]                     Step1
     Appstate                   Home
@@ -104,6 +104,8 @@ Set Default Trial User Passwords
     VerifyText                 Success                     anchor=Status
     CloseWindow
     Logout
+    Log                        Dummy passwords set for Trial users. Next, change dummy passwords to default passwords
+    
     FOR                        ${uNum}                     IN RANGE                    1                          ${no_of_users}+1
         Login As               ${se_id}+u${uNum}+${trial_no}@copado.com                ${dummy_password}
         ${changePasswordPrompt}                            isText                      Change Your Password
@@ -116,17 +118,13 @@ Set Default Trial User Passwords
         END
         Logout
     END
+    Log                        Trial users default passwords set to ${tu_password}
+    Log                        Now starting process to create sandboxes
 
-
-Create Sandboxes
-    [Documentation]            Automates the creation of Sandboxes.
-    [Tags]                     Step1
-    Appstate                   Home
-
+    Home
     #### Set Up Data ####
     @{SB}=                     Create List                 Dev1                        Dev2                       Dev3                Dev4    SIT     UAT    Hotfix
     #####################
-
     FOR                        ${currentSandboxName}       IN                          @{SB}
         Log                    Creating Sandbox ${currentSandboxName}...               console=true
         GoTo                   ${login_url}/lightning/setup/DataManagementCreateTestInstance/home
