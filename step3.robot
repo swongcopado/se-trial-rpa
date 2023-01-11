@@ -414,9 +414,11 @@ Create Pipeline Connections
         ClickText          Pipeline Connections
         ClickText          New
         UseModal           on
-        TypeText           Source Environment        ${sourceEnv}
+        ClickText          Source Environment
+        WriteText          ${sourceEnv}
         ClickText          ${sourceEnv}              New Environment
-        TypeText           Destination Environment    ${destEnv}
+        ClickText          Destination Environment
+        WriteText          ${destEnv}
         ClickText          ${destEnv}              New Environment
         TypeText           Branch                  ${branch}
         ClickText          Save                    2
@@ -426,6 +428,7 @@ Create Pipeline Connections
         VerifyText         ${branch}
     END
     Logout
+
 
 
 #   ###################### 
