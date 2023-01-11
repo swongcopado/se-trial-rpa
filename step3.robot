@@ -45,6 +45,11 @@ Create Main User Credential for Sandboxes
         #                       Now Authenticate
         ClickText               ${currentCredentialName}
         SwitchWindow            NEW
+        ClickText               Edit
+        VerifyText              Save                        30s
+        ClickCheckbox           Default Credential          on
+        ClickText               Save
+        VerifyText              Authenticate        
         ClickText               Authenticate
         SwitchWindow            NEW
         TypeText                Username                    ${sf_user}${currentUsernameExtension}
